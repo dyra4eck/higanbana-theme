@@ -1,0 +1,74 @@
+// Higanbana — Plymouth boot splash
+Window.SetBackgroundTopColor(0.043, 0.043, 0.051);
+Window.SetBackgroundBottomColor(0.043, 0.043, 0.051);
+
+cx = Window.GetX() + Window.GetWidth() / 2;
+cy = Window.GetY() + Window.GetHeight() / 2;
+
+// --- лилия, плавно проявляется ---
+lily.image = Image("lily.png");
+lily.sprite = Sprite(lily.image);
+lily.sprite.SetPosition(cx - lily.image.GetWidth() / 2, cy - lily.image.GetHeight() / 2 - 60, 10);
+lily.sprite.SetOpacity(0);
+
+// --- тонкая полоска прогресса ---
+bar.w = 220;
+bar.y = cy + lily.image.GetHeight() / 2 + 10;
+bar.bg = Sprite(Image("bar_bg.png").Scale(bar.w, 2));
+bar.bg.SetPosition(cx - bar.w / 2, bar.y, 10);
+bar.img = Image("bar.png");
+bar.fg = Sprite();
+bar.fg.SetPosition(cx - bar.w / 2, bar.y, 11);
+
+frame = 0;
+fun refresh_callback() {
+  frame++;
+  o = frame / 90;
+  if (o > 1) o = 1;
+  lily.sprite.SetOpacity(o);
+  bar.bg.SetOpacity(o);
+}
+Plymouth.SetRefreshFunction(refresh_callback);
+
+fun progress_callback(duration, progress) {
+  w = Math.Int(bar.w * progress);
+  if (w < 1) w = 1;
+  bar.fg.SetImage(bar.img.Scale(w, 2));
+}
+Plymouth.SetBootProgressFunction(progress_callback);
+
+// --- пароль (шифрованный диск) ---
+fun display_password_callback(prompt, bullets) {
+  global.prompt_sprite = Sprite(Image.Text(prompt, 0.54, 0.52, 0.53, 1, "Inter 12"));
+  global.prompt_sprite.SetPosition(cx - global.prompt_sprite.GetImage().GetWidth() / 2, bar.y + 34, 20);
+  dots = "";
+  for (i = 0; i < bullets; i++) dots += "●  ";
+  if (bullets == 0) dots = " ";
+  global.dots_sprite = Sprite(Image.Text(dots, 0.88, 0.21, 0.23, 1, "Inter 14"));
+  global.dots_sprite.SetPosition(cx - global.dots_sprite.GetImage().GetWidth() / 2, bar.y + 64, 20);
+  bar.bg.SetOpacity(0);
+  bar.fg.SetOpacity(0);
+}
+Plymouth.SetDisplayPasswordFunction(display_password_callback);
+
+fun display_question_callback(prompt, entry) {
+  display_password_callback(prompt, 0);
+  global.dots_sprite = Sprite(Image.Text(entry, 0.9, 0.88, 0.87, 1, "Inter 14"));
+  global.dots_sprite.SetPosition(cx - global.dots_sprite.GetImage().GetWidth() / 2, bar.y + 64, 20);
+}
+Plymouth.SetDisplayQuestionFunction(display_question_callback);
+
+fun display_normal_callback() {
+  global.prompt_sprite = NULL;
+  global.dots_sprite = NULL;
+  bar.bg.SetOpacity(1);
+  bar.fg.SetOpacity(1);
+}
+Plymouth.SetDisplayNormalFunction(display_normal_callback);
+
+// --- сообщения (fsck и т.п.) ---
+fun message_callback(text) {
+  global.msg_sprite = Sprite(Image.Text(text, 0.54, 0.52, 0.53, 1, "Inter 10"));
+  global.msg_sprite.SetPosition(cx - global.msg_sprite.GetImage().GetWidth() / 2, Window.GetY() + Window.GetHeight() - 60, 20);
+}
+Plymouth.SetMessageFunction(message_callback);

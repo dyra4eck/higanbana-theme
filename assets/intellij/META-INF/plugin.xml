@@ -1,0 +1,12 @@
+<idea-plugin>
+  <id>dev.higanbana.theme</id>
+  <name>Higanbana Theme</name>
+  <version>1.0.1</version>
+  <vendor>Timoha</vendor>
+  <description><![CDATA[Near-black dark theme with spider-lily crimson accents.]]></description>
+  <idea-version since-build="233"/>
+  <depends>com.intellij.modules.platform</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <themeProvider id="dev.higanbana.theme.dark" path="/themes/Higanbana.theme.json"/>
+  </extensions>
+</idea-plugin>

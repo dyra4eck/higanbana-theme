@@ -1,0 +1,63 @@
+/* Higanbana — Obsidian snippet (поверх стандартной тёмной темы) */
+.theme-dark {
+  --accent-h: 358;
+  --accent-s: 80%;
+  --accent-l: 43%;
+  --color-accent: #c4161c;
+  --color-accent-1: #e0353b;
+  --color-accent-2: #ff6b6b;
+
+  --background-primary: #0f0f12;
+  --background-primary-alt: #0b0b0d;
+  --background-secondary: #0b0b0d;
+  --background-secondary-alt: #08080a;
+  --background-modifier-border: #232328;
+  --background-modifier-hover: #1f1214;
+  --background-modifier-active-hover: #2a1214;
+  --background-modifier-form-field: #141417;
+
+  --text-normal: #e6e1df;
+  --text-muted: #8a8486;
+  --text-faint: #5a5658;
+  --text-accent: #e0353b;
+  --text-accent-hover: #ff6b6b;
+  --text-selection: rgba(196, 22, 28, 0.30);
+  --text-highlight-bg: rgba(196, 22, 28, 0.25);
+
+  --interactive-accent: #c4161c;
+  --interactive-accent-hover: #e0353b;
+
+  --link-color: #e0353b;
+  --link-color-hover: #ff6b6b;
+  --link-external-color: #e85a5e;
+  --link-unresolved-color: #a0484c;
+  --tag-color: #e0353b;
+  --tag-background: rgba(196, 22, 28, 0.12);
+
+  --h1-color: #f0e6e4;
+  --h2-color: #e88c8f;
+  --h3-color: #e0353b;
+  --h4-color: #c4161c;
+  --h5-color: #a0484c;
+  --h6-color: #8a8486;
+
+  --code-background: #141417;
+  --blockquote-border-color: #8c1016;
+  --hr-color: #232328;
+  --checkbox-color: #c4161c;
+  --graph-node-focused: #e0353b;
+  --graph-line: #232328;
+}
+
+.theme-dark .workspace-tab-header.is-active,
+.theme-dark .workspace-tab-header.mod-active {
+  box-shadow: inset 0 -2px 0 #c4161c;
+}
+.theme-dark .nav-file-title.is-active {
+  background-color: #2a1214;
+  color: #ffffff;
+}
+.theme-dark .markdown-rendered h1,
+.theme-dark .cm-header-1 {
+  letter-spacing: -0.01em;
+}

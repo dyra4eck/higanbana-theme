@@ -1,0 +1,44 @@
+{
+  "name": "Higanbana",
+  "dark": true,
+  "author": "Timoha",
+  "parentTheme": "ExperimentalDark",
+  "editorScheme": "/themes/Higanbana.xml",
+  "colors": {
+    "bg": "#0b0b0d", "bg2": "#0f0f12", "bg3": "#141417", "bg4": "#1a1a1e", "line": "#232328",
+    "fg": "#e6e1df", "dim": "#8a8486", "accent": "#c4161c", "accentHi": "#e0353b", "sel": "#5a1418", "selHi": "#8c1016"
+  },
+  "ui": {
+    "*": {
+      "background": "bg", "foreground": "fg", "infoForeground": "dim",
+      "selectionBackground": "sel", "selectionForeground": "#ffffff",
+      "selectionInactiveBackground": "#2a1214", "hoverBackground": "#1f1214",
+      "borderColor": "line", "separatorColor": "line",
+      "focusColor": "accent", "focusedBorderColor": "accent"
+    },
+    "MainWindow.background": "bg",
+    "MainToolbar.background": "bg", "MainToolbar.inactiveBackground": "bg",
+    "StatusBar.background": "bg",
+    "ToolWindow.background": "bg2", "ToolWindow.Header.background": "bg2", "ToolWindow.Header.inactiveBackground": "bg2",
+    "ToolWindow.Stripe.background": "bg",
+    "ToolWindow.Button.selectedBackground": "sel", "ToolWindow.Button.selectedForeground": "#ffffff",
+    "EditorTabs.background": "bg", "EditorTabs.underlinedTabBackground": "bg3", "EditorTabs.underlineColor": "accent",
+    "EditorTabs.inactiveUnderlineColor": "sel", "EditorTabs.hoverBackground": "bg3",
+    "DefaultTabs.underlineColor": "accent", "TabbedPane.underlineColor": "accent",
+    "Tree.background": "bg2", "List.background": "bg2", "Table.background": "bg2",
+    "Panel.background": "bg", "Popup.background": "bg3", "PopupMenu.background": "bg3",
+    "ComboBox.background": "bg4", "TextField.background": "bg2", "TextArea.background": "bg2",
+    "Button.background": "bg4",
+    "Button.default.startBackground": "accent", "Button.default.endBackground": "accent",
+    "Button.default.focusedBorderColor": "accentHi", "Button.default.foreground": "#ffffff",
+    "Component.focusColor": "accent", "Component.focusedBorderColor": "accent",
+    "Link.activeForeground": "accentHi", "Link.hoverForeground": "accentHi",
+    "ProgressBar.progressColor": "accent", "ProgressBar.indeterminateStartColor": "accent", "ProgressBar.indeterminateEndColor": "sel",
+    "Checkbox.Background.Selected": "accent", "Checkbox.Border.Selected": "accent",
+    "ScrollBar.Mac.thumbColor": "#2a2a30", "ScrollBar.thumbColor": "#2a2a30",
+    "Notification.background": "bg3",
+    "Counter.background": "accent", "Counter.foreground": "#ffffff",
+    "NavBar.background": "bg"
+  },
+  "icons": { "ColorPalette": { "Actions.Red": "#e0353b", "Objects.Red": "#c4161c" } }
+}

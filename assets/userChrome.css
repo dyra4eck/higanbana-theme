@@ -1,0 +1,43 @@
+/* Higanbana — Firefox userChrome.css
+   Работает поверх «Системной темы»: цвета берутся из Plasma, здесь — форма и акценты. */
+
+:root {
+  --hb-accent: #c4161c;
+  --hb-accent-hi: #e0353b;
+  --hb-bg: #0b0b0d;
+  --hb-line: #232328;
+}
+
+/* без лишних рамок и линий между панелями */
+#navigator-toolbox { border-bottom: none !important; }
+#nav-bar { box-shadow: none !important; border-top: none !important; }
+#PersonalToolbar { padding-bottom: 2px !important; }
+
+/* активная вкладка — тонкая красная линия снизу */
+.tab-background[selected] {
+  box-shadow: inset 0 -2px 0 var(--hb-accent) !important;
+}
+.tabbrowser-tab:not([selected]):hover .tab-background {
+  box-shadow: inset 0 -2px 0 color-mix(in srgb, var(--hb-accent) 45%, transparent) !important;
+}
+/* индикатор звука / загрузки в цвет */
+.tab-throbber[busy]::before { fill: var(--hb-accent-hi) !important; }
+
+/* адресная строка */
+#urlbar-background {
+  border: 1px solid var(--hb-line) !important;
+  box-shadow: none !important;
+}
+#urlbar[focused] > #urlbar-background {
+  border-color: var(--hb-accent) !important;
+  outline: none !important;
+}
+
+/* кнопки панели — мягче при наведении */
+toolbarbutton:hover > .toolbarbutton-icon,
+toolbarbutton:hover > .toolbarbutton-badge-stack {
+  background-color: color-mix(in srgb, var(--hb-accent) 18%, transparent) !important;
+}
+
+/* вертикальные вкладки / боковая панель (если включены) */
+#sidebar-main { border-inline-end: 1px solid var(--hb-line) !important; }
