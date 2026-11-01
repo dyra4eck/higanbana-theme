@@ -10,9 +10,9 @@
 |---|---|
 | Загрузка | GRUB (меню с лилией), Plymouth (проявление лилии, полоска прогресса, ввод пароля диска) |
 | Вход и блокировка | SDDM Breeze с кадром лилии, экран блокировки, курсор Bibata Modern Ice |
-| Рабочий стол | живые обои «Emptiness» (пересобраны из сцены Wallpaper Engine, 4K и 2560×1600), часы 土曜日 |
+| Рабочий стол | живые обои «Emptiness» на всех мониторах (пересобраны из сцены Wallpaper Engine, 4K и 2560×1600), часы 土曜日 |
 | Plasma | цветовая схема Higanbana, Breeze Dark, Papirus-Dark с красными папками, шрифты Inter / JetBrains Mono |
-| Окна | Kvantum с прозрачностью и размытием, скруглённые углы, тайлинг Krohnkite с отступами, автоскрывающиеся док и верхняя панель |
+| Окна | плоский Breeze без градиентов, скруглённые углы, тайлинг Krohnkite с отступами, автоскрывающиеся док и верхняя панель |
 | Терминал | Konsole (полупрозрачный), starship, fastfetch, eza, bat, btop, cava, tmux, файловый менеджер yazi |
 | Приложения | IntelliJ (плагин темы), Telegram, Obsidian (CSS-сниппет), Firefox (userChrome) |
 
@@ -55,6 +55,7 @@ steps/              пошаговая установка с нуля
   05-tiling-sddm-tools.sh      Krohnkite, скругления, SDDM, btop/cava/tmux
   06-boot-apps-widget.sh       Plymouth, GRUB, Telegram/Obsidian/Firefox, часы
   07-yazi.sh                   yazi: тема, плагины, функция y
+  08-monitors-flat-overview.sh обои на все мониторы, плоский Breeze, горячий угол
 assets/             обои, Plymouth, GRUB, тема Telegram, сниппеты, плагин IntelliJ, виджет
 home/, system/      снимок (заполняется sync.sh)
 ```
@@ -75,6 +76,14 @@ home/, system/      снимок (заполняется sync.sh)
 
 Конфиг лежит в `assets/yazi/` и ставится в `~/.config/yazi/`. Плагины `git`, `full-border`, `smart-enter` и `toggle-pane` ставятся через `ya pkg`.
 
+## Второй монитор
+
+Если монитор подключён позже установки, перенеси обои на него:
+
+```bash
+./steps/08-monitors-flat-overview.sh monitors
+```
+
 ## Откат
 
 - **Конфиги пользователя:** `cp ~/.config/pre-higanbana-<дата>/* ~/.config/`, эту команду `install.sh` выводит в конце работы.
@@ -85,6 +94,7 @@ home/, system/      снимок (заполняется sync.sh)
 ## Известные нюансы
 
 - **Скругления углов** — сторонний эффект KWin, его пересобирают после каждого обновления KWin. Автозапуск `test-install-kde-rounded-corners.desktop` делает это сам.
+- **Kvantum:** стоит, но по умолчанию выключен ради строгого минимализма. Вернуть: `kwriteconfig6 --file kdeglobals --group KDE --key widgetStyle kvantum`.
 - **Krohnkite:** тайловые окна должны быть на обычном слое (`tiledWindowsLayer=1`), иначе окно в фокусе прячется под плавающими. Это уже учтено.
 - **Экран входа:** greeter SDDM работает на X11, на Wayland мигает экранная клавиатура. Плагин `qt6-virtualkeyboard-plugin` удаляется.
 - **Firefox из snap** не видит GTK-тему Plasma, поэтому меняется только форма через userChrome, цвета остаются стандартными тёмными.

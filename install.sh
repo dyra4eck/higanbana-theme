@@ -28,6 +28,7 @@ if [ "$MODE" = steps ]; then
   sudo apt remove -y qt6-virtualkeyboard-plugin 2>/dev/null || true
   echo; echo "######## steps/06-boot-apps-widget.sh"; bash steps/06-boot-apps-widget.sh boot apps widget
   echo; echo "######## steps/07-yazi.sh"; bash steps/07-yazi.sh
+  echo; echo "######## steps/08-monitors-flat-overview.sh"; bash steps/08-monitors-flat-overview.sh monitors flat overview
 else
   # ---------- установка из снимка ----------
   echo "==> пакеты"
@@ -99,6 +100,9 @@ else
 
   echo "==> yazi"
   YAZI_KEEP_CONFIG=1 bash steps/07-yazi.sh
+
+  echo "==> обои на все мониторы"
+  bash steps/08-monitors-flat-overview.sh monitors
 fi
 
 cat <<EOF
