@@ -1,0 +1,14 @@
+{
+  "KPlugin": {
+    "Id": "dev.higanbana.clock",
+    "Name": "Higanbana Clock",
+    "Description": "Thin clock with kanji weekday",
+    "Category": "Date and Time",
+    "Icon": "preferences-system-time",
+    "Authors": [{ "Name": "Timoha" }],
+    "License": "MIT",
+    "Version": "1.0"
+  },
+  "KPackageStructure": "Plasma/Applet",
+  "X-Plasma-API-Minimum-Version": "6.0"
+}

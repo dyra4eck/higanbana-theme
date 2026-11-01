@@ -1,0 +1,17 @@
+MenuBar=Disabled
+
+[Desktop Entry]
+DefaultProfile=Higanbana.profile
+
+[General]
+ConfigVersion=1
+
+[KonsoleWindow]
+RememberWindowSize=true
+ShowMenuBarByDefault=false
+
+[MainWindow]
+ToolBarsMovable=Enabled
+
+[UiSettings]
+ColorScheme=

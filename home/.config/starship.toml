@@ -1,0 +1,93 @@
+# Higanbana — starship prompt
+add_newline = true
+command_timeout = 800
+palette = "higanbana"
+
+format = """
+[╭─](dim_red)$os$username$hostname$directory$git_branch$git_status$python$golang$docker_context$terraform$kubernetes$cmd_duration$fill$time
+[╰─](dim_red)$character"""
+
+[palettes.higanbana]
+red = "#c4161c"
+bright_red = "#e0353b"
+dim_red = "#5a1418"
+fg = "#e6e1df"
+dim = "#8a8486"
+
+[os]
+disabled = false
+style = "red"
+format = "[$symbol]($style) "
+[os.symbols]
+Ubuntu = "󰕈 "
+
+[username]
+show_always = false
+style_user = "dim"
+format = "[$user]($style)"
+
+[hostname]
+ssh_only = true
+style = "dim"
+format = "[@$hostname]($style) "
+
+[directory]
+style = "bold fg"
+read_only = " 󰌾"
+truncation_length = 4
+truncation_symbol = "…/"
+format = "[󰉋 $path]($style)[$read_only](red) "
+
+[git_branch]
+symbol = "󰘬 "
+style = "red"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "bright_red"
+format = "([$all_status$ahead_behind]($style) )"
+
+[python]
+symbol = "󰌠 "
+style = "dim"
+format = "[$symbol$version( \\($virtualenv\\))]($style) "
+
+[golang]
+symbol = "󰟓 "
+style = "dim"
+format = "[$symbol$version]($style) "
+
+[docker_context]
+symbol = "󰡨 "
+style = "dim"
+format = "[$symbol$context]($style) "
+
+[terraform]
+symbol = "󱁢 "
+style = "dim"
+format = "[$symbol$workspace]($style) "
+
+[kubernetes]
+disabled = false
+symbol = "󱃾 "
+style = "red"
+format = "[$symbol$context( /$namespace)]($style) "
+
+[cmd_duration]
+min_time = 2000
+style = "dim"
+format = "[󰔛 $duration]($style) "
+
+[fill]
+symbol = " "
+
+[time]
+disabled = false
+style = "dim_red"
+time_format = "%H:%M"
+format = "[$time]($style)"
+
+[character]
+success_symbol = "[❯](bold red)"
+error_symbol = "[❯](bold bright_red)[✗](bright_red)"
+vimcmd_symbol = "[❮](bold red)"

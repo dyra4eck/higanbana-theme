@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Higanbana
+Description=Spider lily on near-black, thin crimson progress bar
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/higanbana
+ScriptFile=/usr/share/plymouth/themes/higanbana/higanbana.script
