@@ -29,7 +29,7 @@ cp_home .config/kdeglobals .config/kwinrc .config/kglobalshortcutsrc .config/pla
         .config/plasma-org.kde.plasma.desktop-appletsrc .config/plasmashellrc \
         .config/kcminputrc .config/ksmserverrc .config/kscreenlockerrc .config/konsolerc \
         .config/breezerc .config/gtk-3.0/settings.ini .config/gtk-4.0/settings.ini \
-        .config/Kvantum .config/starship.toml .config/fastfetch .config/btop .config/cava .tmux.conf \
+        .config/Kvantum .config/yazi .config/starship.toml .config/fastfetch .config/btop .config/cava .tmux.conf \
         .config/autostart/test-install-kde-rounded-corners.desktop
 
 echo "==> цвета, Konsole, курсор, шрифт, виджеты, KWin-скрипты, плагин обоев"

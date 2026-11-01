@@ -13,7 +13,7 @@
 | Рабочий стол | живые обои «Emptiness» (пересобраны из сцены Wallpaper Engine, 4K и 2560×1600), часы 土曜日 |
 | Plasma | цветовая схема Higanbana, Breeze Dark, Papirus-Dark с красными папками, шрифты Inter / JetBrains Mono |
 | Окна | Kvantum с прозрачностью и размытием, скруглённые углы, тайлинг Krohnkite с отступами, автоскрывающиеся док и верхняя панель |
-| Терминал | Konsole (полупрозрачный), starship, fastfetch, eza, bat, btop, cava, tmux |
+| Терминал | Konsole (полупрозрачный), starship, fastfetch, eza, bat, btop, cava, tmux, файловый менеджер yazi |
 | Приложения | IntelliJ (плагин темы), Telegram, Obsidian (CSS-сниппет), Firefox (userChrome) |
 
 ## Установка на новую систему
@@ -54,9 +54,26 @@ steps/              пошаговая установка с нуля
   04-terminal-cursor-lock.sh   starship, fastfetch, Nerd Font, курсор, экран блокировки
   05-tiling-sddm-tools.sh      Krohnkite, скругления, SDDM, btop/cava/tmux
   06-boot-apps-widget.sh       Plymouth, GRUB, Telegram/Obsidian/Firefox, часы
+  07-yazi.sh                   yazi: тема, плагины, функция y
 assets/             обои, Plymouth, GRUB, тема Telegram, сниппеты, плагин IntelliJ, виджет
 home/, system/      снимок (заполняется sync.sh)
 ```
+
+## yazi
+
+Терминальный файловый менеджер запускается командой `y`. После выхода терминал остаётся в той папке, где ты закрыл yazi.
+
+| Клавиши | Действие |
+|---|---|
+| `F1` / `~` | все горячие клавиши |
+| `h j k l`, `Enter` | навигация, открыть |
+| `Space`, `y` / `x` / `p`, `d` | выделить, копировать / вырезать / вставить, в корзину |
+| `s` / `S` | поиск по имени (fd) / по содержимому (rg) |
+| `z` / `Z` | переход через fzf / zoxide |
+| `T` | развернуть предпросмотр |
+| `Ctrl+o` | показать файл в Dolphin, оттуда удобно перетаскивать |
+
+Конфиг лежит в `assets/yazi/` и ставится в `~/.config/yazi/`. Плагины `git`, `full-border`, `smart-enter` и `toggle-pane` ставятся через `ya pkg`.
 
 ## Откат
 

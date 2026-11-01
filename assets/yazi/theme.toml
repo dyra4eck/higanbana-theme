@@ -1,0 +1,114 @@
+#:schema https://yazi-rs.github.io/schemas/theme.json
+# Higanbana — тема для yazi. Перекрывает только нужное, остальное — из встроенной тёмной.
+
+[mgr]
+cwd = { fg = "#e0353b", bold = true }
+find_keyword  = { fg = "#e0353b", bold = true, underline = true }
+find_position = { fg = "#8a8486", italic = true }
+symlink_target = { fg = "#8a8486", italic = true }
+
+marker_copied   = { fg = "#6eaa78", bg = "#6eaa78" }
+marker_cut      = { fg = "#e0353b", bg = "#e0353b" }
+marker_marked   = { fg = "#8a8486", bg = "#8a8486" }
+marker_selected = { fg = "#c4161c", bg = "#c4161c" }
+marker_symbol   = "▎"
+
+count_copied   = { fg = "#0b0b0d", bg = "#6eaa78" }
+count_cut      = { fg = "#ffffff", bg = "#8c1016" }
+count_selected = { fg = "#ffffff", bg = "#c4161c" }
+
+border_symbol = "│"
+border_style  = { fg = "#232328" }
+
+[tabs]
+active   = { fg = "#ffffff", bg = "#5a1418", bold = true }
+inactive = { fg = "#8a8486", bg = "reset" }
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+
+[mode]
+normal_main = { fg = "#ffffff", bg = "#8c1016", bold = true }
+normal_alt  = { fg = "#e6e1df", bg = "#1a1a1e" }
+select_main = { fg = "#ffffff", bg = "#c4161c", bold = true }
+select_alt  = { fg = "#e6e1df", bg = "#1a1a1e" }
+unset_main  = { fg = "#ffffff", bg = "#c4161c", bold = true }
+unset_alt   = { fg = "#e6e1df", bg = "#1a1a1e" }
+
+[indicator]
+parent  = { fg = "#e6e1df", bg = "#1f1214" }
+current = { fg = "#ffffff", bg = "#5a1418", bold = true }
+preview = { underline = true }
+
+[status]
+overall    = {}
+sep_left   = { open = "", close = "" }
+sep_right  = { open = "", close = "" }
+perm_sep   = { fg = "#3a3639" }
+perm_type  = { fg = "#c4161c" }
+perm_read  = { fg = "#8a8486" }
+perm_write = { fg = "#e0353b" }
+perm_exec  = { fg = "#e6e1df" }
+progress_label  = { fg = "#e6e1df", bold = true }
+progress_normal = { fg = "#c4161c", bg = "#1a1a1e" }
+progress_error  = { fg = "#ffffff", bg = "#8c1016" }
+
+[which]
+border          = { fg = "#5a1418" }
+cand            = { fg = "#e0353b" }
+rest            = { fg = "#5a5658" }
+desc            = { fg = "#e6e1df" }
+separator_style = { fg = "#3a3639" }
+
+[confirm]
+border  = { fg = "#5a1418" }
+title   = { fg = "#e0353b" }
+btn_yes = { fg = "#ffffff", bg = "#8c1016" }
+
+[spot]
+border   = { fg = "#5a1418" }
+title    = { fg = "#e0353b" }
+tbl_col  = { fg = "#e0353b" }
+tbl_cell = { fg = "#ffffff", bg = "#5a1418" }
+
+[notify]
+title_info  = { fg = "#6eaa78" }
+title_warn  = { fg = "#d6963c" }
+title_error = { fg = "#e0353b" }
+
+[pick]
+border = { fg = "#5a1418" }
+active = { fg = "#e0353b", bold = true }
+
+[input]
+border   = { fg = "#5a1418" }
+title    = { fg = "#e0353b" }
+selected = { fg = "#ffffff", bg = "#5a1418" }
+
+[cmp]
+border = { fg = "#5a1418" }
+active = { fg = "#ffffff", bg = "#5a1418" }
+
+[tasks]
+border  = { fg = "#5a1418" }
+title   = { fg = "#e0353b" }
+hovered = { fg = "#e0353b", bold = true }
+
+[help]
+border  = { fg = "#5a1418" }
+chord   = { fg = "#e0353b" }
+hovered = { fg = "#ffffff", bg = "#5a1418", bold = true }
+
+[filetype]
+rules = [
+	{ mime = "**/image/*", fg = "#e88c8f" },
+	{ mime = "**/{audio,video}/*", fg = "#c9a27e" },
+	{ mime = "**/application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#d6963c" },
+	{ mime = "**/application/{pdf,doc,rtf}", fg = "#b7a9c9" },
+	{ mime = "vfs/{absent,stale}", fg = "#5a5658" },
+	{ url = "*", is = "orphan", fg = "#ffffff", bg = "#8c1016" },
+	{ url = "*", is = "exec", fg = "#6eaa78" },
+	{ url = "*", is = "dummy", fg = "#ffffff", bg = "#8c1016" },
+	{ url = "*/", is = "dummy", fg = "#ffffff", bg = "#8c1016" },
+	{ url = "*/", fg = "#e6e1df", bold = true },
+	{ url = "*", fg = "#b0a8aa" },
+]

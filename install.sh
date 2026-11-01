@@ -27,6 +27,7 @@ if [ "$MODE" = steps ]; then
   echo; echo "######## steps/05-tiling-sddm-tools.sh"; bash steps/05-tiling-sddm-tools.sh terminal tiling sddm
   sudo apt remove -y qt6-virtualkeyboard-plugin 2>/dev/null || true
   echo; echo "######## steps/06-boot-apps-widget.sh"; bash steps/06-boot-apps-widget.sh boot apps widget
+  echo; echo "######## steps/07-yazi.sh"; bash steps/07-yazi.sh
 else
   # ---------- установка из снимка ----------
   echo "==> пакеты"
@@ -95,6 +96,9 @@ else
 
   echo "==> Firefox / Obsidian"
   bash steps/06-boot-apps-widget.sh apps
+
+  echo "==> yazi"
+  YAZI_KEEP_CONFIG=1 bash steps/07-yazi.sh
 fi
 
 cat <<EOF
