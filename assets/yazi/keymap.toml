@@ -28,3 +28,8 @@ desc = "Перейти в ~/Documents"
 on   = "<C-o>"
 run  = 'shell --orphan -- dolphin --select "$0"'
 desc = "Показать в Dolphin (для drag-n-drop)"
+
+[[mgr.prepend_keymap]]
+on   = "<C-t>"
+run  = 'shell --orphan -- konsole --workdir "$PWD"'
+desc = "Открыть Konsole в текущей папке"

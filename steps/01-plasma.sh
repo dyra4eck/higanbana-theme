@@ -26,7 +26,7 @@ need() { command -v "$1" >/dev/null || { echo "нет $1"; exit 1; }; }
 need kwriteconfig6
 
 echo "==> пакеты (шрифты, иконки)"
-sudo apt install -y fonts-inter fonts-jetbrains-mono papirus-icon-theme kde-spectacle
+sudo apt install -y fonts-inter fonts-jetbrains-mono papirus-icon-theme kde-spectacle konsole-kpart
 
 echo "==> бэкап"
 BK=~/.config/higanbana-backup-$(date +%Y%m%d-%H%M%S)

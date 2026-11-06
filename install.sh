@@ -33,7 +33,7 @@ else
   # ---------- установка из снимка ----------
   echo "==> пакеты"
   sudo apt update
-  sudo apt install -y kde-plasma-desktop kde-spectacle sddm sddm-theme-breeze kde-config-sddm \
+  sudo apt install -y kde-plasma-desktop kde-spectacle konsole-kpart sddm sddm-theme-breeze kde-config-sddm \
     fonts-inter fonts-jetbrains-mono papirus-icon-theme \
     qt-style-kvantum qt-style-kvantum-themes breeze-gtk-theme kde-config-gtk-style \
     starship fastfetch eza bat btop cava tmux ffmpeg curl xz-utils git plymouth \
